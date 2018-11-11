@@ -47,7 +47,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q1 | </strong></span>
               &nbsp;&nbsp; Your mind is always buzzing with unexplored ideas and plans.</h4>
             </span>
-            <!-- <input type="text" id="q1-ans" class="form-control"> -->
+            <!-- <input type="text" id="q5-ans" class="form-control"> -->
             <select default="Seledt a Rating" data-placeholder="" class="chosen-select" id="q1-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
@@ -70,7 +70,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q2 |  </strong></span>
               &nbsp;&nbsp; Generally speaking, you rely more on your experience than your imagination.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="Seledt a Rating" class="chosen-select" id="q2-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -92,7 +92,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q3 |  </strong></span>
               &nbsp;&nbsp; You find it easy to stay relaxed and focused even when there is some pressure.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q3-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -114,7 +114,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q4 |  </strong></span>
               &nbsp;&nbsp; You rarely do something just out of sheer curiosity.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q4-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -136,7 +136,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q5 |  </strong></span>
               &nbsp;&nbsp; People can rarely upset you.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q5-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -158,7 +158,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q6 |  </strong></span>
               &nbsp;&nbsp; It is often difficult for you to relate to other people’s feelings.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q6-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -180,7 +180,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q7 |  </strong></span>
               &nbsp;&nbsp; In a discussion, truth should be more important than people’s sensitivities.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q7-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -202,7 +202,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q8 |  </strong></span>
               &nbsp;&nbsp; You rarely get carried away by fantasies and ideas.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q8-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -224,7 +224,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q9 | </strong></span>
               &nbsp;&nbsp; You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
             </span>
-            <select data-placeholder="" class="chosen-select" id="q1-ans">
+            <select data-placeholder="" class="chosen-select" id="q9-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -248,7 +248,7 @@
             <span><h4><span class="label label-primary" id="my-num=label"><strong>Q10 | </strong></span>
               You feel more energetic after spending time with a group of people.</h4>
             </span>
-            <select data-placeholder="Seledt a Rating" class="chosen-select" id="q1-ans">
+            <select data-placeholder="Seledt a Rating" class="chosen-select" id="q10-ans">
               <option value=""></option>
               <option value="1">1 (Strongly Disagree)</option>
               <option value="2">2</option>
@@ -276,22 +276,95 @@
     </div> <!-- End of Row-->
   </div> <!-- End of Container -->
 
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
 
-    var friendObj = {
-      name: $("#friend-name").val().trim(),
-      photo: $("#friend-photo").val().trim(),
-      scores: [],
-      total: scores.reduce( add, 0), 
-      add: function( a, b ) {return a + b}
+
+    
+    $(".submit").on("click", function() {
+      event.preventDefault();
+      var friendName = $("#friend-name").val().trim();
+      var friendPhoto = $("#friend-photo").val().trim();
+      var friendScores = [];
+      friendScores = [$("#q1-ans").val(),
+                      $("#q2-ans").val(),
+                      $("#q3-ans").val(),
+                      $("#q4-ans").val(),
+                      $("#q5-ans").val(),
+                      $("#q6-ans").val(),
+                      $("#q7-ans").val(),
+                      $("#q8-ans").val(),
+                      $("#q9-ans").val(),
+                      $("#q10-ans").val()];
+
+      console.log("friendScores: " + friendScores);
+      var mySum = 0;
+      friendScores.map(function(item, idx) {
+        item = parseInt(item);
+        mySum += item;
+        console.log("mySum: " + mySum);
+      });
+      console.log("parseInt(friendScores): " + friendScores);
+      var friendTotal = mySum;
+
+      // var add = function(a, b) {return a + b};
+      // var friendTotal = friendScores.reduce(add, 0); // TBD ???
       // For Reference:
       // var sum = [1, 2, 3].reduce(add, 0);
       // function add(a, b) {
       //     return a + b;
       // }
-      // console.log(sum); // 6
+
+      console.log("friendName: " + friendName);
+      console.log("friendPhoto: " + friendPhoto);
+      console.log("friendScores: " + friendScores);
+      console.log("friendTotal: " + friendTotal);
+
+  var friendObj = {
+      name: $("#friend-name").val().trim(),
+      photo: $("#friend-photo").val().trim(),
+      scores: friendScores,
+      total : friendTotal
     }
-  </script> -->
+
+    console.log("friendObj: ", friendObj);
+
+
+      // Clear values in form
+      // $("#friend-name").val("");
+      // $("#friend-photo").val("");
+      // $("#friend-email").val("");
+      // $("#friend-id").val("");
+
+      // ONLY because front end and backend/api are served from the same server,
+      // so could use relative endpoints
+      var friendHost = window.location.host; 
+      // console.log("friendHost: " + friendHost);
+      var frontEndFilesRoute = "/survey";
+      // console.log("frontEndFilesRoute: " + frontEndFilesRoute);
+      var postDataURL = friendHost + frontEndFilesRoute;
+      console.log("postDataURL: " + postDataURL);
+ 
+
+      $.ajax({
+        // url: "http://localhost:3000/survey",
+        url: postDataURL,
+        method:"POST",
+        // DO NOT INCLUDE THIS CONTENT Statement
+        // contentType: "application/json; charset=utf-8",
+        data: friendObj,
+        success: function(response) {
+          console.log("Success! You made a new friend!");
+          console.log("questions.html: response... (i.e. returned by api_route.js post route");
+          console.log(response)
+        },
+        error: function(){
+          alert("error");
+        }
+      }); 
+    });
+
+
+  </script>
 
 </body>
 </html>
