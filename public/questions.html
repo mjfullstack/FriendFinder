@@ -16,6 +16,11 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- Remember to include jQuery :) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 </head>
 <body>
@@ -266,7 +271,7 @@
           <div class="panel-heading">
           </div>
           <div class="panel-body"> -->
-            <div class="submit"><button class="btn btn-primary btn-lg">Submit</button>
+            <div class="submit"><a href="#matchDisplay" rel="modal:open"><button class="btn btn-primary btn-lg">Submit</button></a>
             </div>
             <br>
             <br>
@@ -275,6 +280,21 @@
       <!-- </div> End of Column -->
     </div> <!-- End of Row-->
   </div> <!-- End of Container -->
+
+
+  <!-- Modal HTML embedded directly into document -->
+<div id="matchDisplay" class="modal">
+  <div id="name-area">Name</div>
+  <div id="image-area">Image Coming Soon</div>
+  <p><a href="#" rel="modal:close"><button class="btn btn-primary btn-md">Close</a></p></button>
+</div>
+
+<!-- Link to open the modal -->
+<!-- <p><a href="#matchDisplay" rel="modal:open">Open Modal</a></p> -->
+
+
+
+
 
   <script type="text/javascript">
 
@@ -355,7 +375,34 @@
         success: function(response) {
           console.log("Success! You made a new friend!");
           console.log("questions.html: response... (i.e. returned by api_route.js post route");
-          console.log(response)
+          console.log(response);
+          // Next, the front end will present the match name and photo in a modal!
+          
+          // <!-- Modal HTML embedded directly into document -->
+          // <div id="matchDisplay" class="modal">
+          
+            // <h1 id="name-area">Name</h1>
+            // <img id=image-area src='https://www.jeffdunham.com/wp-content/uploads/2016/02/Jose.png'>
+          var myModal = $("#matchDisplay");
+          var nameArea = $("#name-area");
+          var addName = $("<div>")
+                        .html('<h1>' + response.body.name + '</h1>');
+          nameArea.append(addName);
+          console.log("nameArea: " + nameArea);
+
+          // nameArea.text(response.body.name);
+          // $("#name-area").text(response.body.name)
+          // <div <img alt="Your Match Coming SOON!" src='https://www.jeffdunham.com/wp-content/uploads/2016/02/Jose.png'>
+          var imageArea = $("#image-area");
+          var addImage = $("<img>")
+                          .html("src=" + response.body.photo + " alt='Your Match Coming SOON!'");
+          imageArea.append(addImage);
+          console.log("imageArea: " + imageArea);
+
+          // imageArea.attr("src", "https://www.jeffdunham.com/wp-content/uploads/2016/02/walter-4.png");
+          // <!-- Link to open the modal -->
+          // <p><a href="#matchDisplay" rel="modal:open">Open Modal</a></p>
+
         },
         error: function(){
           alert("error");
