@@ -53,59 +53,6 @@
     </div>
   </div>
 
-  <!-- <script type="text/javascript">
-    
-    $(".submit").on("click", function() {
-      event.preventDefault();
-      var eaterName = $("#eater-name").val().trim();
-      var eaterPhone = $("#eater-phone").val().trim();
-      var eaterEmail = $("#eater-email").val().trim();
-      var eaterUniqueID = $("#eater-id").val().trim();
-
-      var tableReservation = {
-        custName: eaterName,
-        custPhone: eaterPhone,
-        custEmail: eaterEmail,
-        custUniqueID: eaterUniqueID // Could be {custUniqueID: $("#eater-id").val().trim()}
-      }
-
-      console.log("index.html: tableReservation");
-      console.log(tableReservation);
-      // Clear values in form
-      $("#eater-name").val("");
-      $("#eater-phone").val("");
-      $("#eater-email").val("");
-      $("#eater-id").val("");
-
-      // ONLY because front end and backend/api are served from the same server,
-      // so could use relative endpoints
-      var eaterHost = window.location.host; 
-      // console.log("eaterHost: " + eaterHost);
-      var frontEndFilesRoute = "/data";
-      // console.log("frontEndFilesRoute: " + frontEndFilesRoute);
-      var postDataURL = eaterHost + frontEndFilesRoute;
-      console.log("postDataURL: " + postDataURL);
- 
-
-      $.ajax({
-        url: "http://localhost:8080/data",
-        method:"POST",
-        // DO NOT INCLUDE THIS CONTENT Statement
-        // contentType: "application/json; charset=utf-8",
-        data: tableReservation,
-        success:function(response) {
-          console.log("Success! Reservation made!");
-          console.log("index.html: response... (i.e. returned by api_route.js post route");
-          console.log(response)
-        },
-        error:function(){
-          alert("error");
-        }
-      }); 
-    });
-
-
-  </script> -->
 
 </body>
 </html>
