@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- <link rel="shortcut icon" href="img/MSRoller_logogoldroller.ico" sizes="16x16"> -->
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-facebook-square"></span> Friend Finder</h1>
+      <h3 class="text-center">Survey Questions... About You!</h3>
+      <!-- <h3 class="text-center">About You!</h3> -->
+      <span>Name: (Required)</span><input type="text" name="" id="friend-name" class="form-control">
+      <br>
+      <span>Link to Photo Image: (Required)</span><input type="text" name="" id="friend-photo" class="form-control">
+      <!-- <br> -->
+    </div>
+
+      <!-- <div class="text-center">
+        <a  href="/questions"><button class="btn btn-primary btn-md"><span class="fa fa-list-alt"></span> Start Survey</button></a>
+      </div> -->
+    <div class="row">
+      <!-- Q1 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="panel-title text-center"><strong>Questions List</strong></h1>
+          </div>
+          <div class="panel-body">
+            <!-- <h3 class="panel-title" float="left"><strong>Question 1</strong></h3> -->
+            <!-- <h1>Example <span class="label label-primary"><h4>ALL H1</h4></span></h1> -->
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q1 | </strong></span>
+              &nbsp;&nbsp; Your mind is always buzzing with unexplored ideas and plans.</h4>
+            </span>
+            <!-- <input type="text" id="q1-ans" class="form-control"> -->
+            <select default="Seledt a Rating" data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q2 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 2</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q2 |  </strong></span>
+              &nbsp;&nbsp; Generally speaking, you rely more on your experience than your imagination.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q3 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 3</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q3 |  </strong></span>
+              &nbsp;&nbsp; You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q4 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 4</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q4 |  </strong></span>
+              &nbsp;&nbsp; You rarely do something just out of sheer curiosity.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q5 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 5</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q5 |  </strong></span>
+              &nbsp;&nbsp; People can rarely upset you.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q6 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 6</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q6 |  </strong></span>
+              &nbsp;&nbsp; It is often difficult for you to relate to other people’s feelings.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q7 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 7</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q7 |  </strong></span>
+              &nbsp;&nbsp; In a discussion, truth should be more important than people’s sensitivities.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q8 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 8</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q8 |  </strong></span>
+              &nbsp;&nbsp; You rarely get carried away by fantasies and ideas.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q9 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 9</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q9 | </strong></span>
+              &nbsp;&nbsp; You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+            </span>
+            <select data-placeholder="" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+      
+      <!-- Q10 -->
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title"><strong>Question 10</strong></h3>
+          </div> -->
+          <div class="panel-body">
+            <!-- <div class="well"> -->
+            <!-- <h3><span class="label label-primary">  1</span></h3> -->
+            <span><h4><span class="label label-primary" id="my-num=label"><strong>Q10 | </strong></span>
+              You feel more energetic after spending time with a group of people.</h4>
+            </span>
+            <select data-placeholder="Seledt a Rating" class="chosen-select" id="q1-ans">
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <!-- </div>  -->
+          </div> <!-- End of Panel Body-->
+        </div> <!-- End of Panel-->
+      </div> <!-- End of Col-->
+        
+      <div class="col-lg-12">
+        <!-- <div class="panel panel-default">
+          <div class="panel-heading">
+          </div>
+          <div class="panel-body"> -->
+            <div class="submit"><button class="btn btn-primary btn-lg">Submit</button>
+            </div>
+            <br>
+            <br>
+          </div> <!-- End of Panel Body-->
+        <!-- </div> End of Panel-->
+      <!-- </div> End of Column -->
+    </div> <!-- End of Row-->
+  </div> <!-- End of Container -->
+
+  <!-- <script type="text/javascript">
+
+    var friendObj = {
+      name: $("#friend-name").val().trim(),
+      photo: $("#friend-photo").val().trim(),
+      scores: [],
+      total: scores.reduce( add, 0), 
+      add: function( a, b ) {return a + b}
+      // For Reference:
+      // var sum = [1, 2, 3].reduce(add, 0);
+      // function add(a, b) {
+      //     return a + b;
+      // }
+      // console.log(sum); // 6
+    }
+  </script> -->
+
+</body>
+</html>
