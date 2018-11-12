@@ -284,9 +284,10 @@
 
   <!-- Modal HTML embedded directly into document -->
 <div id="matchDisplay" class="modal">
-  <div id="name-area">Name</div>
-  <div id="image-area">Image Coming Soon</div>
-  <p><a href="#" rel="modal:close"><button class="btn btn-primary btn-md">Close</a></p></button>
+  <div id="name-area"></div>
+  <div id="image-area"></div>
+  <br>
+  <p><a href="#" rel="modal:close"><button class="btn btn-default btn-md" id="close-modal">Close</a></p></button>
 </div>
 
 <!-- Link to open the modal -->
@@ -316,14 +317,14 @@
                       $("#q9-ans").val(),
                       $("#q10-ans").val()];
 
-      console.log("friendScores: " + friendScores);
+      // // console.log("friendScores: " + friendScores);
       var mySum = 0;
       friendScores.map(function(item, idx) {
         item = parseInt(item);
         mySum += item;
-        console.log("mySum: " + mySum);
+        // console.log("mySum: " + mySum);
       });
-      console.log("parseInt(friendScores): " + friendScores);
+      // console.log("parseInt(friendScores): " + friendScores);
       var friendTotal = mySum;
 
       // var add = function(a, b) {return a + b};
@@ -334,39 +335,38 @@
       //     return a + b;
       // }
 
-      console.log("friendName: " + friendName);
-      console.log("friendPhoto: " + friendPhoto);
-      console.log("friendScores: " + friendScores);
-      console.log("friendTotal: " + friendTotal);
+      // console.log("friendName: " + friendName);
+      // console.log("friendPhoto: " + friendPhoto);
+      // console.log("friendScores: " + friendScores);
+      // console.log("friendTotal: " + friendTotal);
 
-  var friendObj = {
+      var friendObj = {
       name: $("#friend-name").val().trim(),
       photo: $("#friend-photo").val().trim(),
       scores: friendScores,
       total : friendTotal
     }
 
-    console.log("friendObj: ", friendObj);
+    // console.log("friendObj: ", friendObj);
 
 
       // Clear values in form
-      // $("#friend-name").val("");
-      // $("#friend-photo").val("");
-      // $("#friend-email").val("");
-      // $("#friend-id").val("");
+      $("#friend-name").val("");
+      $("#friend-photo").val("");
+      $("#friend-email").val("");
+      $("#friend-id").val("");
 
       // ONLY because front end and backend/api are served from the same server,
       // so could use relative endpoints
       var friendHost = window.location.host; 
-      // console.log("friendHost: " + friendHost);
+      // // console.log("friendHost: " + friendHost);
       var frontEndFilesRoute = "/survey";
-      // console.log("frontEndFilesRoute: " + frontEndFilesRoute);
+      // // console.log("frontEndFilesRoute: " + frontEndFilesRoute);
       var postDataURL = friendHost + frontEndFilesRoute;
-      console.log("postDataURL: " + postDataURL);
+      // console.log("postDataURL: " + postDataURL);
  
 
       $.ajax({
-        // url: "http://localhost:3000/survey",
         // url: postDataURL,
         url: frontEndFilesRoute,
         method:"POST",
@@ -374,35 +374,31 @@
         // contentType: "application/json; charset=utf-8",
         data: friendObj,
         success: function(response) {
-          console.log("Success! You made a new friend!");
-          console.log("questions.html: response... (i.e. returned by api_route.js post route");
-          console.log(response);
+          // console.log("Success! You made a new friend!");
+          // console.log("questions.html: response... (i.e. returned by api_route.js post route");
+          // console.log(response);
+          
           // Next, the front end will present the match name and photo in a modal!
-          
           // <!-- Modal HTML embedded directly into document -->
-          // <div id="matchDisplay" class="modal">
-          
-            // <h1 id="name-area">Name</h1>
-            // <img id=image-area src='https://www.jeffdunham.com/wp-content/uploads/2016/02/Jose.png'>
-          var myModal = $("#matchDisplay");
           var nameArea = $("#name-area");
+          nameArea.empty();
           var addName = $("<div>")
-                        // .html('<h1>' + response.body.name + '</h1>');
                         .html('<h1>' + response.name + '</h1>');
           nameArea.append(addName);
-          console.log("nameArea: " + nameArea);
+          // console.log("MODAL-OPEN nameArea: " + nameArea);
+          // console.log(nameArea);
 
-          // nameArea.text(response.body.name);
-          // $("#name-area").text(response.body.name)
-          // <div <img alt="Your Match Coming SOON!" src='https://www.jeffdunham.com/wp-content/uploads/2016/02/Jose.png'>
           var imageArea = $("#image-area");
+          imageArea.empty();
           var addImage = $("<img>")
-                          // .html("src=" + response.body.photo + " alt='Your Match Coming SOON!'");
-                          .html("src=" + response.photo + " alt='Your Match Coming SOON!'");
+                          .attr("src", response.photo)
+                          .attr("width", "100%")
+                          .attr("height", "auto")
+                          .attr("alt", "Your Match Coming SOON!");
           imageArea.append(addImage);
-          console.log("imageArea: " + imageArea);
+          // console.log("MODAL-OPEN imageArea: " + imageArea);
+          // console.log(imageArea);
 
-          // imageArea.attr("src", "https://www.jeffdunham.com/wp-content/uploads/2016/02/walter-4.png");
           // <!-- Link to open the modal -->
           // <p><a href="#matchDisplay" rel="modal:open">Open Modal</a></p>
 
@@ -413,6 +409,18 @@
       }); 
     });
 
+    $("#close-modal").on("click", function() {
+      event.preventDefault();
+      var nameArea = $("#name-area");
+      nameArea.empty();
+      // console.log("MODAL-CLOSE nameArea: ", nameArea);
+      // console.log(nameArea);
+
+      var imageArea = $("#image-area");
+      imageArea.empty();
+      // console.log("MODAL-CLOSE imageArea: ", imageArea);
+      // console.log(imageArea);
+});
 
   </script>
 
