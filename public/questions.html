@@ -387,7 +387,8 @@
           var myModal = $("#matchDisplay");
           var nameArea = $("#name-area");
           var addName = $("<div>")
-                        .html('<h1>' + response.body.name + '</h1>');
+                        // .html('<h1>' + response.body.name + '</h1>');
+                        .html('<h1>' + response.name + '</h1>');
           nameArea.append(addName);
           console.log("nameArea: " + nameArea);
 
@@ -396,7 +397,8 @@
           // <div <img alt="Your Match Coming SOON!" src='https://www.jeffdunham.com/wp-content/uploads/2016/02/Jose.png'>
           var imageArea = $("#image-area");
           var addImage = $("<img>")
-                          .html("src=" + response.body.photo + " alt='Your Match Coming SOON!'");
+                          // .html("src=" + response.body.photo + " alt='Your Match Coming SOON!'");
+                          .html("src=" + response.photo + " alt='Your Match Coming SOON!'");
           imageArea.append(addImage);
           console.log("imageArea: " + imageArea);
 
