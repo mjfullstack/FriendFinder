@@ -1,8 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var mysql = require("mysql");
+// var mysql = require("mysql");
 var path = require('path');
-var config = require("./config.js");
+// var config = require("./config.js");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -23,21 +23,21 @@ app.use((express.static(path.join(__dirname,"./public"))));
 // app.set("view engine", "handlebars");
 
 // Database Connection - if needed
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: config.password,
-  database: "friends_db"
-});
+          // var connection = mysql.createConnection({
+          //   host: "localhost",
+          //   port: 3306,
+          //   user: "root",
+          //   password: config.password,
+          //   database: "friends_db"
+          // });
 
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
+          // connection.connect(function(err) {
+          //   if (err) {
+          //     console.error("error connecting: " + err.stack);
+          //     return;
+          //   }
+          //   console.log("connected as id " + connection.threadId);
+          // });
 
 // Required Server Files
 var htmlRoutes = require("./routing/html-routes.js")(app);
